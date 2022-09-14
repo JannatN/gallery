@@ -7,21 +7,28 @@ class App extends React.Component {
   state = { images: [] };
   componentDidMount() {
     fetch("https://picsum.photos/v2/list")
-          .then(response => response.json())
-          .then(data => {
-            console.log(data);
-            this.setState({ images: data.slice(0, 6) });
-          });
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ images: data });
+        console.log(this.state)
+
+      });
   }
 
   render() {
     return (
       <div className='ui container' style={{ marginTop: '10px' }}>
-        <ImageList images={this.state.images} />
-        <Button></Button>
+        <ImageList images={this.state.images.slice(0, 6)} />
+        {/* <button className='button' onClick={generate}>Generate</button> */}
+        <Button images={this.state.images} ></Button>
       </div>
     );
   }
+
+
 }
+
+
+
 
 export default App;
