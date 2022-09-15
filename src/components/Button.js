@@ -15,6 +15,8 @@ class Button extends React.Component {
   generateImages() {
     if (this.state.showComponent === false) {
       var images = document.getElementsByTagName('img');
+      var imageList = document.getElementsByClassName('image-list');
+      imageList[0].parentNode.removeChild(imageList[0]);
       var l = images.length;
       for (var p = 0; p < l; p++) {
         images[0].parentNode.removeChild(images[0]);
@@ -33,11 +35,12 @@ class Button extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         {this.state.showComponent ?
           <ImageList images={newArray.slice(0, 6)} /> :
           null
         }
+        <hr style={{ width: "40%" }} />
         <button className='button' onClick={this.generateImages}>Generate</button>
 
       </div>

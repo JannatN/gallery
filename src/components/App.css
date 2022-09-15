@@ -2,8 +2,10 @@
     max-width: 800px;
     max-height: 800px;
     display: grid;
-    grid-template-rows: auto auto;
-    text-align: center
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    grid-gap: 30px;
+
   }
 
 
@@ -18,12 +20,20 @@
     display: grid;
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
+    text-align: center;
+
+
   }
 
   .image-list img {
     width: 100%;
     border-radius: 5px;
     filter: drop-shadow(1px 1px 4px #dadada);
+
+  }
+
+  hr {
+    border: 1px solid #dadada;
   }
 
   .button {

@@ -1,6 +1,6 @@
 import React from 'react';
 
- class ImageCard extends React.Component {
+ class Image extends React.Component {
   render() {
     return (
         <img src={`https://picsum.photos/500?image=${this.props.image.id}`}
@@ -8,4 +8,4 @@ import React from 'react';
     );
   }
 }
-export default ImageCard;
+export default Image;
