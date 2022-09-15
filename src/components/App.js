@@ -11,7 +11,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({
-          images: data, showComponent: true,
+          images: data
         });
         // console.log(this.state)
 
@@ -21,14 +21,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='ui container' style={{ marginTop: '10px' }}>
-        {this.state.showComponent ?
-          <ImageList images={this.state.images.slice(0, 6)} /> :
-          null
-        }
-        {/* <ImageList images={this.state.images.slice(0, 6)} /> */}
+      <div className='container'>
+        <ImageList images={this.state.images.slice(0, 6)} />
         <Button images={this.state.images}  ></Button>
-
       </div>
     );
   }

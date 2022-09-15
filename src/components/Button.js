@@ -9,11 +9,11 @@ class Button extends React.Component {
     this.state = {
       showComponent: false,
     };
-    this._onButtonClick = this._onButtonClick.bind(this);
+    this.generateImages = this.generateImages.bind(this);
   }
 
-  _onButtonClick() {
-    if (this.state.showComponent == false) {
+  generateImages() {
+    if (this.state.showComponent === false) {
       var images = document.getElementsByTagName('img');
       var l = images.length;
       for (var p = 0; p < l; p++) {
@@ -38,7 +38,7 @@ class Button extends React.Component {
           <ImageList images={newArray.slice(0, 6)} /> :
           null
         }
-        <button className='button' onClick={this._onButtonClick}>Generate</button>
+        <button className='button' onClick={this.generateImages}>Generate</button>
 
       </div>
     );
