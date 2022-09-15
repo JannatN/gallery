@@ -14,14 +14,7 @@ class Button extends React.Component {
 
   generateImages() {
     if (this.state.showComponent === false) {
-      var images = document.getElementsByTagName('img');
-      var imageList = document.getElementsByClassName('image-list');
-      imageList[0].parentNode.removeChild(imageList[0]);
-      var l = images.length;
-      for (var p = 0; p < l; p++) {
-        images[0].parentNode.removeChild(images[0]);
-        console.log("removed")
-      }
+      this.removeImages();
     }
     this.setState({
       showComponent: true,
@@ -31,7 +24,17 @@ class Button extends React.Component {
 
 
   }
-
+  // remove the initial image list
+  removeImages() {
+    var images = document.getElementsByTagName('img');
+    var imageList = document.getElementsByClassName('image-list');
+    imageList[0].parentNode.removeChild(imageList[0]);
+    var l = images.length;
+    for (var p = 0; p < l; p++) {
+      images[0].parentNode.removeChild(images[0]);
+      console.log("removed")
+    }
+  }
 
   render() {
     return (
